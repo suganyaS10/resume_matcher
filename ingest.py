@@ -35,7 +35,7 @@ def resume_to_bullets(text):
   {text}"""
 
   response = anthropic.messages.create(
-    model="claude-opus-4-8",
+    model="claude-haiku-4-5",
     max_tokens=4096,
     output_config={"format": {"type": "json_schema", "schema": BULLET_SCHEMA}},
     messages=[{"role": "user", "content": prompt}]
