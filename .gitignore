@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Private data — your résumé has PII, never commit it
+resume.pdf
+resume.txt
+*.pdf
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store

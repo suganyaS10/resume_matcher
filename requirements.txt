@@ -1,0 +1,6 @@
+streamlit
+voyageai
+numpy
+anthropic
+pdfplumber
+python-dotenv
