@@ -5,14 +5,20 @@ import streamlit as st
 from matcher import tailored_summary, match
 from ingest import extract_text, resume_to_bullets
 
+# Flip to True to re-enable analysis (disabled to control API cost)
+ANALYSIS_ENABLED = False
+
 st.set_page_config(page_title="Resume ↔ Job Match", page_icon="📄")
 st.title("📄 Resume ↔ Job Match")
 st.caption("Upload your resume, paste a job description, and see how well you fit - plus a tailored summary.")
 
+if not ANALYSIS_ENABLED:
+    st.info("⏸️ Analysis is temporarily paused while I tune things — check back soon!")
+
 resume_file = st.file_uploader("Your resume (PDF)", type=["pdf"])
 jd_text = st.text_area("Paste the job description", height=220)
 
-if st.button("Analyze", type="primary"):
+if st.button("Analyze", type="primary", disabled=not ANALYSIS_ENABLED):
     if not resume_file or not jd_text.strip():
         st.warning("Please upload a resume and paste a job description.")
         st.stop()
