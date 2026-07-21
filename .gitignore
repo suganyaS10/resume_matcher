@@ -1,10 +1,13 @@
 # Secrets
 .env
 
-# Private data — your résumé has PII, never commit it
+# Private data — résumé has PII, never commit
 resume.pdf
 resume.txt
 *.pdf
+
+# LLM-parsed résumé bullets — contains real experience (PII), never commit
+resume_bullets.json
 
 # Python
 venv/
